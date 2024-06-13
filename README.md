@@ -117,11 +117,16 @@ Essas etapas garantem que a imagem esteja preparada adequadamente para a visuali
 A seguir é apresentado algumas das imagens já processadas lado a lado.
 
 <p align="center">
-  <img src="results/processed/cow_0.png" width="150" />
-  <img src="results/processed/cow_1.png" width="150" />
-  <img src="results/processed/cow_2.png" width="150" />
-  <img src="results/processed/cow_3.png" width="150" />
-  <img src="results/processed/cow_4.png" width="150" />
+    <p align="center">
+        <img src="results/processed/cow_0.png" width="350" />
+        <img src="results/processed/cow_1.png" width="350" />
+        <img src="results/processed/cow_2.png" width="350" />
+    </p>
+  
+<p align="center">
+    <img src="results/processed/cow_3.png" width="350" />
+    <img src="results/processed/cow_4.png" width="350" />
+</p>
 </p>
 
 
