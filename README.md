@@ -4,7 +4,7 @@
 
 ## Passo a Passo para Rodar o Projeto
 
-`### 1. Clonar o Repositório
+### Clonar o Repositório
 
 Clone o repositório do GitHub para a sua máquina local.
 
@@ -13,7 +13,7 @@ git clone https://github.com/username/repo.git
 cd repo
 ```
 
-### 2. Instalar Dependências
+### Instalar Dependências
 
 Instale as dependências necessárias listadas no arquivo `requirements.txt`.
 
@@ -21,11 +21,11 @@ Instale as dependências necessárias listadas no arquivo `requirements.txt`.
 pip install -r requirements.txt
 ```
 
-### 3. Estrutura de Diretórios
+### Estrutura de Diretórios
 
 Certifique-se de que a estrutura de diretórios esteja conforme descrito acima, com as imagens e o arquivo `keypoints.js` na pasta `data`.
 
-### 4. Executar o Script Principal
+### Executar o Script Principal
 
 Execute o script principal `main.py` para realizar a análise exploratória, filtragem, processamento e visualização dos resultados.
 
@@ -33,9 +33,39 @@ Execute o script principal `main.py` para realizar a análise exploratória, fil
 python main.py
 ```
 
-### 5. Verificar Resultados
+### Verificar Resultados
 
 Os resultados das análises e do processamento serão exibidos na saída do console e os gráficos gerados estarão disponíveis na pasta `results`.
+
+### Estrutura do Repositório
+
+```plaintext
+data
+    ├── images
+    │   ├── 0001.jpg
+    │   ├── 0002.jpg
+    │   └── ...
+    └── keypoints.js
+results
+    ├── processed
+    │   ├── cow_0.jpg
+    │   ├── cow_1.jpg
+    │   └── ...
+    ├── graphic_0.png
+    └── table_0.png
+src
+    ├── data_loading.py
+    ├── exploratory_analysis.py
+    ├── results.py
+    ├── utils.py
+    └── visualization.py
+.gitignore
+main.py
+requirements.txt
+README.md
+```
+
+*O dataset com as imagens pode ser baixado através desse [link](https://drive.google.com/drive/folders/1xxm6ZjfsDSmv6C9JvbgiGrmHktrUjV5x) pois ele não está presente no repositório
 
 
 ## 1. Análise Exploratória
@@ -118,22 +148,3 @@ Nessa atividade, foi possível entender a importância das técnicas de processa
 - Expansão do dataset com mais imagens e categorias.
 - Aplicação da visão computacional em tarefas para carros autônomos, utilizando os conceitos aprendidos em projetos mais complexos.
 
-## Estrutura do Repositório
-
-```plaintext
-data
-    ├── images
-    │   ├── 0001.jpg
-    │   ├── 0002.jpg
-    │   └── ...
-    └── keypoints.js
-src
-    ├── data_loading.py
-    ├── exploratory_analysis.py
-    ├── results.py
-    ├── utils.py
-    └── visualization.py
-main.py
-requirements.txt
-README.md
-```
