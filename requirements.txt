@@ -1,4 +1,5 @@
 matplotlib
 seaborn
 pandas
-opencv-python
+opencv-python-headless
+dataframe_image

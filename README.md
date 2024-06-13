@@ -1,16 +1,61 @@
+
 # Pose Estimation para Bovinos
+
+
+## Passo a Passo para Rodar o Projeto
+
+`### 1. Clonar o Repositório
+
+Clone o repositório do GitHub para a sua máquina local.
+
+```sh
+git clone https://github.com/username/repo.git
+cd repo
+```
+
+### 2. Instalar Dependências
+
+Instale as dependências necessárias listadas no arquivo `requirements.txt`.
+
+```sh
+pip install -r requirements.txt
+```
+
+### 3. Estrutura de Diretórios
+
+Certifique-se de que a estrutura de diretórios esteja conforme descrito acima, com as imagens e o arquivo `keypoints.js` na pasta `data`.
+
+### 4. Executar o Script Principal
+
+Execute o script principal `main.py` para realizar a análise exploratória, filtragem, processamento e visualização dos resultados.
+
+```sh
+python main.py
+```
+
+### 5. Verificar Resultados
+
+Os resultados das análises e do processamento serão exibidos na saída do console e os gráficos gerados estarão disponíveis na pasta `results`.
+
 
 ## 1. Análise Exploratória
 
-Realizamos uma análise exploratória dos dados para entender a distribuição das categorias e keypoints.
+Realizamos uma análise exploratória dos dados para compreender a distribuição das categorias. O gráfico de barras apresenta a quantidade de imagens por tipo de animal no conjunto de dados. Cada barra, representada por uma cor distinta, corresponde a um tipo de animal, facilitando a comparação da quantidade de imagens entre os diferentes tipos.
 
 **Distribuição das Categorias:**
 
-![Distribuição das Categorias](images/category_distribution.png)
+![Distribuição das Categorias](results/category_distribution.png)
 
-**Descrição Textual:**
+**Tabela de Categorias:**
 
-Observamos que a categoria de bovinos possui X imagens e Y anotações. A distribuição dos keypoints é mostrada no gráfico acima.
+<p align="center">
+  <img src="results/category_count_table.png" width="200" />
+</p>
+
+
+Observamos que a categoria de bovinos possui 527 imagens após um pré-processamento de eliminação de duplicatas. A distribuição das categorias é mostrada no gráfico acima.
+
+
 
 ## 2. Filtragem e Processamento de Imagens
 
@@ -18,44 +63,77 @@ Filtramos o dataset para obter apenas as imagens de bovinos e realizamos o proce
 
 **Etapas de Processamento:**
 
-1. Carregar os dados de anotações e imagens.
-2. Filtrar as anotações para bovinos.
+1. Carregar os dados de anotações JSON e imagens do Dataset.
+2. Filtrar as imagens através das anotações para bovinos e plotar gráficos e tabelas.
 3. Processar as imagens para visualizar os keypoints.
+    - 3.1. Redimensionamento da imagem para as novas dimensões especificadas (por exemplo, 150x150).
+    - 3.2. Ajustar os keypoints proporcionalmente ao novo tamanho da imagem.
+    - 3.3. Converter a imagem redimensionada para escala de cinza para simplificar o processamento.
+    - 3.4. Normalizar a imagem de escala de cinza para valores no intervalo [0, 1] para melhorar a estabilidade do processamento.
+    - 3.5. Aplicar um filtro gaussiano à imagem normalizada para suavizar a imagem e reduzir o ruído.
+    - 3.6. Detectar bordas na imagem suavizada usando o algoritmo de detecção de bordas de Canny, convertendo a imagem suavizada de volta para o intervalo [0, 255] antes da detecção.
+4. Geração dos pontos dos esqueletos bovinos e salvamento das imagens geradas
+
+Essas etapas garantem que a imagem esteja preparada adequadamente para a visualização dos keypoints e para a análise subsequente.
 
 **Figura Ilustrativa do Processo:**
 
-![Processo de Filtragem](images/process_flow.png)
+![Fluxo de Processamento](results/process_diagram.png)
 
 ## 3. Resultados Finais
 
-**Distribuição dos Keypoints dos Bovinos:**
+**Exemplo de imagens geradas:**
 
-![Distribuição dos Keypoints](images/keypoints_distribution.png)
+A seguir é apresentado algumas das imagens já processadas lado a lado.
 
-**Descrição Textual:**
+<p align="center">
+  <img src="results/processed/cow_0.png" width="150" />
+  <img src="results/processed/cow_1.png" width="150" />
+  <img src="results/processed/cow_2.png" width="150" />
+  <img src="results/processed/cow_3.png" width="150" />
+  <img src="results/processed/cow_4.png" width="150" />
+</p>
 
-Os keypoints dos bovinos estão distribuídos conforme o gráfico acima, mostrando a localização típica dos pontos-chave.
+
+Podemos observar que tivemos um reusltado muito interessante dos esqueletos destacando ainda mais a siluetas extraidas através da detecao de bordas. Padronizamos as imagens em tamanho, cor e textura, permitindo maior capacidade comparativa entre os resultados obtidos.
 
 ## 4. Conclusões Pessoais
 
+Nessa atividade, foi possível entender a importância das técnicas de processamento de imagem, que destacam características importantes como bordas e contornos, facilitando análises futuras. Quanto às limitações do trabalho, o número reduzido de categorias de animais simplificou a tarefa, tornando-a menos complexa. Um desafio maior para o futuro seria lidar com mais dados e dados mais complexos. Sugiro que, em trabalhos futuros, utilizemos a visão computacional em tarefas para carros autônomos, aplicando os conceitos aprendidos em projetos mais avançados.
+
 ### Principais Aprendizados
 
-- A importância dos keypoints na estimativa de poses.
-- Desafios no processamento e visualização dos dados.
+- A importância das técnicas de processamento de imagem, que destacam características importantes, como bordas e contornos.
+- A relevância dos keypoints na estimativa de poses.
+- Os desafios no processamento e visualização dos dados.
 
 ### Limitações do Trabalho
 
-- Qualidade das anotações e imagens pode variar.
-- Dataset limitado em termos de variedade de poses.
+- O número reduzido de categorias de animais simplificou a tarefa.
+- A qualidade das anotações e das imagens pode variar.
 
 ### Sugestões para Trabalhos Futuros
 
 - Uso de técnicas de deep learning para melhorar a precisão.
 - Expansão do dataset com mais imagens e categorias.
+- Aplicação da visão computacional em tarefas para carros autônomos, utilizando os conceitos aprendidos em projetos mais complexos.
 
-## Repositório
+## Estrutura do Repositório
 
-O código da implementação realizada em scripts Python está disponível no repositório GitHub.
-
-[Link para o repositório](https://github.com/username/repo)
-[text](data/raw/bounding_boxes) [text](data/raw/bounding_boxes/annotations) [text](data/raw/bounding_boxes/annotations/antelope.json) [text](data/raw/bounding_boxes/annotations/bear.json) [text](data/raw/bounding_boxes/annotations/bobcat.json) [text](data/raw/bounding_boxes/annotations/hippocampi.json) [text](data/raw/bounding_boxes/annotations/orangutan.json) [text](data/raw/bounding_boxes/annotations/otter.json) [text](data/raw/bounding_boxes/annotations/rhino.json) [text](data/raw/bounding_boxes/images) [text](data/raw/bounding_boxes/images/antelope) [text](data/raw/bounding_boxes/images/bear) [text](data/raw/bounding_boxes/images/bobcat) [text](data/raw/bounding_boxes/images/chimpanzee) [text](data/raw/bounding_boxes/images/hippopotamus) [text](data/raw/bounding_boxes/images/otter) [text](data/raw/bounding_boxes/images/rhino) [text](data/raw/keypoints) [text](data/raw/keypoints/images) [text](data/raw/keypoints/keypoints.json)
+```plaintext
+data
+    ├── images
+    │   ├── 0001.jpg
+    │   ├── 0002.jpg
+    │   └── ...
+    └── keypoints.js
+src
+    ├── data_loading.py
+    ├── exploratory_analysis.py
+    ├── results.py
+    ├── utils.py
+    └── visualization.py
+main.py
+requirements.txt
+README.md
+```
