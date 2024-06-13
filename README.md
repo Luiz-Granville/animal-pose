@@ -132,7 +132,7 @@ A seguir é apresentado algumas das imagens já processadas lado a lado.
 
 Podemos observar que tivemos um reusltado muito interessante dos esqueletos destacando ainda mais a siluetas extraidas através da detecao de bordas. Padronizamos as imagens em tamanho, cor e textura, permitindo maior capacidade comparativa entre os resultados obtidos.
 
-## 4. Conclusões Pessoais
+## 4. Conclusões
 
 Nessa atividade, foi possível entender a importância das técnicas de processamento de imagem, que destacam características importantes como bordas e contornos, facilitando análises futuras. Quanto às limitações do trabalho, o número reduzido de categorias de animais simplificou a tarefa, tornando-a menos complexa. Um desafio maior para o futuro seria lidar com mais dados e dados mais complexos. Sugiro que, em trabalhos futuros, utilizemos a visão computacional em tarefas para carros autônomos, aplicando os conceitos aprendidos em projetos mais avançados.
 
